@@ -6,8 +6,10 @@ function showInfo(cardNumber) {
     let button1 = document.querySelector("#card1 button");
     let button2 = document.querySelector("#card2 button");
 
-    info1.style.display = "none";
-    info2.style.display = "none";
+    // Impede abrir um card se o outro já está aberto
+    if ((cardNumber === 1 && info2.style.opacity === "1") || (cardNumber === 2 && info1.style.opacity === "1")) {
+        return;
+    }
 
     if (cardNumber === 1) {
         if (info1.style.opacity === "1") {
@@ -22,9 +24,6 @@ function showInfo(cardNumber) {
             card2.classList.add("desfazer-desfoque");
             setTimeout(() => card2.classList.remove("desfazer-desfoque"), 500);
         } else {
-            info2.style.opacity = "0";
-            info2.style.visibility = "hidden";
-            button2.innerText = "Ver Mais";
             card1.style.transition = "transform 0.5s ease-in-out";
             card2.style.transition = "transform 0.5s ease-in-out";
             card1.style.transform = "translateX(100px)";
@@ -50,9 +49,6 @@ function showInfo(cardNumber) {
             card1.classList.add("desfazer-desfoque");
             setTimeout(() => card1.classList.remove("desfazer-desfoque"), 500);
         } else {
-            info1.style.opacity = "0";
-            info1.style.visibility = "hidden";
-            button1.innerText = "Ver Mais";
             card1.style.transition = "transform 0.5s ease-in-out";
             card2.style.transition = "transform 0.5s ease-in-out";
             card2.style.transform = "translateX(-100px)";

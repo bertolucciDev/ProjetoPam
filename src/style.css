@@ -1070,15 +1070,10 @@ body {
     }
 }
 
-button {
+.button {
     transition: all 0.3s ease-in-out;
-}
-
-.btn{
-    opacity: 0.9;
-    border: none;
-    border-radius: 20px;
-    background-color: #1b2735;
+    background-color: #20283e;
+    color: white;
 }
 
 .bg {
@@ -1087,4 +1082,10 @@ button {
     height: 100vh;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .card img{
+        width: 70%;
+    }
 }
